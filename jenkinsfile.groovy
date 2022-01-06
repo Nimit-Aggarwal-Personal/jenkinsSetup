@@ -16,7 +16,9 @@ resultfolder = "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Resu
       stage('Generating result') {
         steps {
           script {
-            def outputp = powershell(returnStdout: true, script: 'gci ${resultfolder} | sort -Property LastWriteTime -Descending | select -First 1').toString()
+            println("${resultfolder}")
+			def outputp = powershell(returnStdout: true, script: 'gci "${resultfolder}" | sort -Property LastWriteTime -Descending | select -First 1').toString()
+			println("${outputp}")
 			echo "Printing powershell output.........."
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
