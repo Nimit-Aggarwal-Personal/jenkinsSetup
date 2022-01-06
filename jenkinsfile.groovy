@@ -16,6 +16,7 @@ import groovy.io.*
         steps {
           script {
             def outputp = powershell(returnStatus: true, script: 'gci "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results" | sort -Property LastWriteTime -Descending | select -First 1')
+			output = outputp.substring(output.indexOf("Result_"))
 			println "${outputp}"
             echo "Generating result.........."
           }
