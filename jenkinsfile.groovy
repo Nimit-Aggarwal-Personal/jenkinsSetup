@@ -1,6 +1,6 @@
 import groovy.io.*
-def resultfolder = "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results"
-
+def resultfolder = "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results\\"
+def currentResultFolder
   pipeline {
     agent any
     stages {
@@ -21,6 +21,8 @@ def resultfolder = "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\
 			echo "Printing powershell output.........."
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
+			currentResultFolder =  ${resultfolder}${outputp}
+			println("${currentResultFolder}")
             echo "Generating result.........."
           }
         }
