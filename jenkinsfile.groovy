@@ -29,6 +29,7 @@ def resultFileName = "VRBankingResultFile.html"
 			println(env.WORKSPACE)
 			bat "copy currentResultFolder env.WORKSPACE"
 			archiveArtifacts artifacts: **/"${outputp}"/*.html
+			bat "copy currentResultFolder env.WORKSPACE"
 
           }
         }
