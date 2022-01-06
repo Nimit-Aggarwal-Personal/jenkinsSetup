@@ -17,7 +17,7 @@ stage('Generating result')
 steps{
 	script {
 		def testEnvironment = "Prod"
-		println ${testEnvironment}
+		println "${testEnvironment}"
 		echo "Generating result.........."
 		}
 }
