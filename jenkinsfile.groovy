@@ -1,4 +1,6 @@
 import groovy.io.*
+import java.nio.file.Paths
+
 def resultfolder = "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results\\"
 def currentResultFolder
 def resultFileName = "VRBankingResultFile.html"
