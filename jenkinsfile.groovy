@@ -15,9 +15,11 @@ echo "Starting test cases.........."
 stage('Generating result') 
 {
 steps{
-def testEnvironment = "Prod"
-println ${testEnvironment}
-echo "Generating result.........."
+	script {
+		def testEnvironment = "Prod"
+		println ${testEnvironment}
+		echo "Generating result.........."
+		}
 }
 }
 }
