@@ -20,11 +20,9 @@ def resultFileName = "VRBankingResultFile.html"
         steps {
           script {
 			def outputp = powershell(returnStdout: true, script: 'gci "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results" | sort -Property LastWriteTime -Descending | select -First 1').toString()
-			println("${outputp}")
-			echo "Printing powershell output.........."
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
-			currentResultFolder =  resultfolder + outputp
+			currentResultFolder =  new File(resultfolder, outputp).toString()
 			currentResultFolder =  new File(currentResultFolder, resultFileName).toString()
 			println("${currentResultFolder}")
             echo "Generating result.........."
