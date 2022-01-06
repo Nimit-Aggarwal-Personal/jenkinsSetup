@@ -25,22 +25,11 @@ def resultFileName = "VRBankingResultFile.html"
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
 			currentResultFolder =  resultfolder + outputp
-			//currentResultFolder =  new File(currentResultFolder, resultFileName)
+			currentResultFolder =  new File(currentResultFolder, resultFileName)
 			println("${currentResultFolder}")
             echo "Generating result.........."
-			archive (includes: 'pkg/*.gem')
+			archiveArtifacts artifacts: currentResultFolder
 
-			// publish html
-			// snippet generator doesn't include "target:"
-			// https://issues.jenkins.io/browse/JENKINS-29711.
-			publishHTML (target: [
-				allowMissing: false,
-				alwaysLinkToLastBuild: false,
-				keepAll: true,
-				reportDir: '${currentResultFolder}',
-				reportFiles: '${resultFileName}',
-				reportName: "RCov Report"
-			])
           }
         }
       }
