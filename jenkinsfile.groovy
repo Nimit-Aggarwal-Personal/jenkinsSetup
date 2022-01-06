@@ -25,7 +25,7 @@ def resultFileName = "VRBankingResultFile.html"
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
 			currentResultFolder =  resultfolder + outputp
-			currentResultFolder =  Paths.get(currentResultFolder, resultFileName)
+			currentResultFolder =  new File(currentResultFolder, resultFileName)
 			println("${currentResultFolder}")
             echo "Generating result.........."
           }
