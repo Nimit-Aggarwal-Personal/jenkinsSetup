@@ -15,7 +15,7 @@ import groovy.io.*
       stage('Generating result') {
         steps {
           script {
-            dh = new File("C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results")
+            dh = new File('.')
             dh.eachFile {
               println(it)
             }
