@@ -22,7 +22,8 @@ def resultFileName = "VRBankingResultFile.html"
 			echo "Printing powershell output.........."
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
-			currentResultFolder =  resultfolder + outputp + "\\" + resultFileName
+			currentResultFolder =  resultfolder + outputp
+			currentResultFolder =  Paths.get(currentResultFolder, resultFileName)
 			println("${currentResultFolder}")
             echo "Generating result.........."
           }
