@@ -1,6 +1,7 @@
 import groovy.io.*
 def resultfolder = "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results\\"
 def currentResultFolder
+def resultFileName = "VRBankingResultFile.html"
   pipeline {
     agent any
     stages {
@@ -21,7 +22,7 @@ def currentResultFolder
 			echo "Printing powershell output.........."
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
-			currentResultFolder =  resultfolder + outputp
+			currentResultFolder =  resultfolder + outputp + "\\" + resultFileName
 			println("${currentResultFolder}")
             echo "Generating result.........."
           }
