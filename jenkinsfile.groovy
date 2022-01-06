@@ -15,7 +15,7 @@ import groovy.io.*
       stage('Generating result') {
         steps {
           script {
-            def outputp = powershell -command gci "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results" | sort -Property LastWriteTime -Descending | select -First 1
+            def outputp = powershell -command "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results" | sort -Property LastWriteTime -Descending | select -First 1
 			println "${outputp}"
             echo "Generating result.........."
           }
