@@ -20,20 +20,25 @@ steps{
 	script {
 		def testEnvironment = "Prod"
 		println "${testEnvironment}"
-		def listfiles(dir) {
-		dlist = []
-		flist = []
-		new File(dir).eachDir {dlist << it.name }
-		dlist.sort()
-			new File(dir).eachFile(FileType.FILES, {flist << it.name })
-		flist.sort()
-		return (dlist << flist).flatten()
-		}
+		def fetFilenamesFromDir(def dir, def list){
+dir.eachFileRecurse (FileType.FILES) { file ->
+file = file.toString()
+if (file.endsWith("json")){
+list << file
+}
+}
+}
 
-		fs = listfiles(".")
-		fs.each {
-		println it
-	}
+node('master'){
+def list = []
+
+def dir = new File("dirPathToBeDefined")
+fetFilenamesFromDir(dir,list)
+
+for (i in list){
+print i
+print("\n")
+}
 		echo "Generating result.........."
 		}
 }
