@@ -1,7 +1,7 @@
 import groovy.io.*
 import java.nio.file.Paths
 
-def resultfolder = "C:\\Users\\naggarwal\\Documents\\Results\\"
+def resultfolder = "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results\\"
 def currentResultFolder
 def resultFileName = "VRBankingResultFile.html"
   pipeline {
@@ -19,7 +19,7 @@ def resultFileName = "VRBankingResultFile.html"
       stage('Generating result') {
         steps {
           script {
-			def outputp = powershell(returnStdout: true, script: 'gci "C:\\Users\\naggarwal\\Documents\\Results" | sort -Property LastWriteTime -Descending | select -First 1').toString()
+			def outputp = powershell(returnStdout: true, script: 'gci "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results" | sort -Property LastWriteTime -Descending | select -First 1').toString()
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
 			currentResultFolder =  new File(resultfolder, outputp).toString()
