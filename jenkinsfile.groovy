@@ -18,7 +18,7 @@ import groovy.io.*
             def outputp = powershell(returnStdout: true, script: 'gci "C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results" | sort -Property LastWriteTime -Descending | select -First 1').toString()
 			echo "Printing powershell output.........."
 			println("${outputp}")
-			outputp = outputp.substring(outputp.indexOf("Result_"), 5)
+			outputp = outputp.substring(outputp.indexOf("Result_"))
 			echo "Printing substring output.........."
 			println("${outputp}")
             echo "Generating result.........."
