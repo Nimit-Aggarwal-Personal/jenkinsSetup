@@ -6,9 +6,9 @@ import groovy.io.*
       stage('Starting test cases') {
         steps {
           bat """
-          cd C: \\Users\\ naggarwal\\ Documents\\ GitHub\\ securego_internal
-          run.bat 
-		  """
+			cd C: \\Users\\naggarwal\\Documents\\GitHub\\securego_internal
+			run.bat 
+			"""
           echo "Starting test cases.........."
         }
       }
