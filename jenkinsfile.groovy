@@ -24,22 +24,17 @@ steps{
 dir.eachFileRecurse (FileType.FILES) { file ->
 file = file.toString()
 if (file.endsWith("json")){
-list << file
+def list << file
 }
 }
 }
 
-node('master'){
-def list = []
-
-def dir = new File("dirPathToBeDefined")
-fetFilenamesFromDir(dir,list)
 
 for (i in list){
 print i
 print("\n")
 }
-}
+
 		echo "Generating result.........."
 		}
 }
