@@ -1,3 +1,5 @@
+import groovy.io.*
+
 pipeline{
 agent any
 stages 
