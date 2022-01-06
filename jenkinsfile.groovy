@@ -39,6 +39,7 @@ for (i in list){
 print i
 print("\n")
 }
+}
 		echo "Generating result.........."
 		}
 }
