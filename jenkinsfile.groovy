@@ -15,7 +15,7 @@ import groovy.io.*
       stage('Generating result') {
         steps {
           script {
-            def outputp = powershell -command hostname
+            def outputp = powershell(returnStatus: true, script: 'hostname')
 			println "${outputp}"
             echo "Generating result.........."
           }
