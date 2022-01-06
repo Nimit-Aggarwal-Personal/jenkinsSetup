@@ -21,7 +21,7 @@ def currentResultFolder
 			echo "Printing powershell output.........."
 			outputp = outputp.substring(outputp.indexOf("Result_"))
 			println("${outputp}")
-			currentResultFolder =  ${resultfolder} + ${outputp}
+			currentResultFolder =  resultfolder + outputp
 			println("${currentResultFolder}")
             echo "Generating result.........."
           }
