@@ -19,9 +19,10 @@ stage('Generating result')
 steps{
 	script {
 		def list = []
-		@NonCPS
+		
 		def dir = new File("C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results")
 		println "${dir}"
+@NonCPS
 dir.eachFileRecurse (FileType.FILES) { file ->
 file = file.toString()
 if (file.endsWith("json")){
