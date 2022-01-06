@@ -28,7 +28,7 @@ def resultFileName = "VRBankingResultFile.html"
             echo "Generating result.........."
 			println(env.WORKSPACE)
 			//archiveArtifacts artifacts: "${outputp}/*.html"
-			bat "copy currentResultFolder env.WORKSPACE"
+			bat "copy ${currentResultFolder} ${env.WORKSPACE}"
 
           }
         }
