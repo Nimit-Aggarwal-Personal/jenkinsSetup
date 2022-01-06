@@ -2,22 +2,16 @@ pipeline{
 agent any
 stages 
 {
-stage('Build') 
+stage('Starting test cases') 
 {
 steps{
-echo "Building the Project.........."
+echo "Starting test cases.........."
 }
 }
-stage('Test') 
+stage('Generating result') 
 {
 steps{
-echo "Testing the Project.........."
-}
-}
-stage('Deploy') 
-{
-steps{
-echo "Deploying the Project.........."
+echo "Generating result.........."
 }
 }
 }
