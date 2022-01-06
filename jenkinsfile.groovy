@@ -19,12 +19,13 @@ stage('Generating result')
 steps{
 	script {
 		def testEnvironment = "Prod"
+		def list = []
 		println "${testEnvironment}"
 		def fetFilenamesFromDir(def dir, def list){
 dir.eachFileRecurse (FileType.FILES) { file ->
 file = file.toString()
 if (file.endsWith("json")){
-def list << file
+list << file
 }
 }
 }
