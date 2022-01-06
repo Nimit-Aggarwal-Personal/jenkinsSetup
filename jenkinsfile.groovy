@@ -15,10 +15,6 @@ echo "Starting test cases.........."
 stage('Generating result') 
 {
 steps{
-def rootFiles = new File("test").listRoots() 
-      rootFiles.each { 
-         file -> println file.absolutePath 
-      }
 echo "Generating result.........."
 }
 }
