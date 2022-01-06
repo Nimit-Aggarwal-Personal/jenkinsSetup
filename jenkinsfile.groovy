@@ -26,10 +26,8 @@ def resultFileName = "VRBankingResultFile.html"
 			currentResultFolder =  new File(currentResultFolder, resultFileName).toString()
 			println("${currentResultFolder}")
             echo "Generating result.........."
-			println(env.WORKSPACE)
-			bat "copy currentResultFolder env.WORKSPACE"
 			archiveArtifacts artifacts: **/"${outputp}"/*.html
-			bat "copy currentResultFolder env.WORKSPACE"
+			bat "copy currentResultFolder new File(".").getAbsolutePath().toString()"
 
           }
         }
