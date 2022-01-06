@@ -19,6 +19,7 @@ stage('Generating result')
 steps{
 	script {
 		def list = []
+		@NonCPS
 		def dir = new File("C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal\\Results")
 		println "${dir}"
 dir.eachFileRecurse (FileType.FILES) { file ->
