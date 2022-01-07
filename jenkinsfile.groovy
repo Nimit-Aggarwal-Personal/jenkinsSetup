@@ -29,9 +29,9 @@ def resultFileName = "VRBankingResultFile.html"
 			def zipFileName = "${outputp}" + ".zip"
 			powershell(returnStatus: true, script: "Compress-Archive ${new File(resultfolder, outputp).toString()} ${new File(env.WORKSPACE, zipFileName).toString()}")
 			//def copyCommand = "xcopy ${new File(resultfolder, outputp).toString()} ${new File(env.WORKSPACE, zipFileName).toString()} /E /H /C /I"
-			println(copyCommand)
-			bat "${copyCommand}"
-			archiveArtifacts artifacts: '/*'"${zipFileName}"
+			//println(copyCommand)
+			//bat "${copyCommand}"
+			archiveArtifacts artifacts: "${zipFileName}"
 
           }
         }
