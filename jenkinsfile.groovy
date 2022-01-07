@@ -29,7 +29,7 @@ def resultFileName = "VRBankingResultFile.html"
 			def copyCommand = "xcopy ${currentResultFolder} new File(env.WORKSPACE, outputp).toString() /E /H /C /I"
 			println(copyCommand)
 			bat "${copyCommand}"
-			archiveArtifacts artifacts: "${outputp}'/**'
+			archiveArtifacts artifacts: "${outputp}"'/**'
 
           }
         }
