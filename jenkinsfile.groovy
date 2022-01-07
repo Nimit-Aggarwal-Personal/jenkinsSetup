@@ -26,7 +26,7 @@ def resultFileName = "VRBankingResultFile.html"
 			currentResultFolder =  new File(currentResultFolder, resultFileName).toString()
 			println("${currentResultFolder}")
             echo "Generating result.........."
-			def copyCommand = "xcopy ${currentResultFolder} new File(env.WORKSPACE, outputp).toString() /E /H /C /I"
+			def copyCommand = "xcopy ${new File(resultfolder, outputp).toString()} ${new File(env.WORKSPACE, outputp).toString()} /E /H /C /I"
 			println(copyCommand)
 			bat "${copyCommand}"
 			archiveArtifacts artifacts: "${outputp}"'/**'
