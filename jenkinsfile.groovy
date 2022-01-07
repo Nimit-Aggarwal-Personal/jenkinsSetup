@@ -27,7 +27,7 @@ def resultFileName = "VRBankingResultFile.html"
 			println("${currentResultFolder}")
             echo "Generating result.........."
 			def zipFileName = "${outputp} + .zip"
-			powershell(returnStatus: true, script: 'Compress-Archive '"${new File(resultfolder, outputp).toString()} ${new File(env.WORKSPACE, zipFileName).toString()}")
+			powershell(returnStatus: true, script: "Compress-Archive ${new File(resultfolder, outputp).toString()} ${new File(env.WORKSPACE, zipFileName).toString()}")
 			def copyCommand = "xcopy ${new File(resultfolder, outputp).toString()} ${new File(env.WORKSPACE, zipFileName).toString()} /E /H /C /I"
 			println(copyCommand)
 			bat "${copyCommand}"
