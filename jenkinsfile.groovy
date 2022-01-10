@@ -9,7 +9,7 @@ def resultFileName = "VRBankingResultFile.html"
     stages {
       stage('Starting test cases') {
         steps {
-		println(${params.numberOfThreads})
+		println(params.numberOfThreads)
           bat """
 			cd C:\\Users\\naggarwal\\Documents\\GitHub\\securego_internal
 			run.bat 
