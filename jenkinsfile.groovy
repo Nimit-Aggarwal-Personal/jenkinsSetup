@@ -7,6 +7,12 @@ def resultFileName = "VRBankingResultFile.html"
   pipeline {
     agent any
     stages {
+	  stage('Git checkout') {
+        steps {
+		checkout([$class: 'GitSCM', branches: [[name: '*/Securego_Updates']], extensions: [], userRemoteConfigs: [[credentialsId: '953bdc20-e4a8-40ba-99f9-5e3ce0f3a860', url: 'https://innersource.soprasteria.com/samridhi.srivastava/securego_internal.git']]])
+          echo "Starting test cases.........."
+        }
+      }
       stage('Starting test cases') {
         steps {
 		println(params.numberOfThreads)
